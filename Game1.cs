@@ -1,5 +1,3 @@
-using System;
-using System.Threading;
 using Amber.Engine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
