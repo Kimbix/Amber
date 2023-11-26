@@ -11,7 +11,7 @@ public class Texture
     private Texture2D _texture;
     private Rectangle _sourceRectangle;
     
-    void LoadTexture(ContentManager content, int columns, int rows, string path)
+    public void LoadTexture(ContentManager content, int columns, int rows, string path)
     {
         _texture = content.Load<Texture2D>(path);
         _sourceRectangle.Height = _texture.Height / rows;
@@ -20,13 +20,13 @@ public class Texture
         _sourceRectangle.Y = 0;
     }
 
-    void ChangeSourceRectangle(int x, int y)
+    public void ChangeSourceRectangle(int x, int y)
     {
         _sourceRectangle.X = x;
         _sourceRectangle.Y = y;
     }
 
-    void DrawTexture(SpriteBatch spriteBatch, Vector2 position)
+    public void DrawTexture(SpriteBatch spriteBatch, Vector2 position)
     {
         spriteBatch.Draw(
             texture: _texture,
