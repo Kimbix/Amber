@@ -1,9 +1,14 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Amber.Blocks;
 
-public interface TerrainBlock
+public abstract class TerrainBlock : Entity.Entity
 {
-    const int GridSize = 32;
-    private Vector2 Position;
+    private const int gridSize = 32;
+
+    static void LoadTexture()
+    {
+        
+    }
 }
