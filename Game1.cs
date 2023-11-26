@@ -11,6 +11,8 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
+    private Sprite _test;
+
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -20,8 +22,6 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
     }
 
@@ -29,6 +29,9 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         TextureManager.LoadTexture(Content, "Sprites/Player/player_sprite", "player_sprite");
+        TextureManager.LoadTexture(Content, "Sprites/Player/testing_sprite", "testing_sprite");
+
+        _test = new Sprite(TextureManager.GetTexture("testing_sprite"), 4, 8);
     }
 
     protected override void Update(GameTime gameTime)
@@ -47,7 +50,7 @@ public class Game1 : Game
         
         _spriteBatch.Begin();
 
-        _spriteBatch.Draw(TextureManager.GetTexture("player_sprite"), Vector2.Zero, Color.Gold); 
+        _test.DrawTexture(_spriteBatch, Vector2.Zero);
         
         _spriteBatch.End();
         

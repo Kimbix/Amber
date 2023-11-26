@@ -16,6 +16,7 @@ public abstract class Entity
     public void Update()
     {
         // Compiler will optimize this don't worry
+        // Trust the compiler
         float A = GRAVITY / MASS;
 
         if (Acceleration.X - A > 0) Acceleration.X -= A; else Acceleration.X = 0;
