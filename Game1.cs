@@ -1,8 +1,8 @@
 ﻿using System;
+using Amber.Engine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Texture = Amber.Engine.Texture;
 
 namespace Amber;
 
@@ -10,8 +10,6 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-
-    private Texture player_sprite = new Texture();
 
     public Game1()
     {
@@ -30,7 +28,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        player_sprite.LoadTexture(Content, 1, 1, "Sprites/Player/player_sprite");
+        TextureManager.LoadTexture(Content, "Sprites/Player/player_sprite", "player_sprite");
     }
 
     protected override void Update(GameTime gameTime)
@@ -48,8 +46,8 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
         
         _spriteBatch.Begin();
-        
-        player_sprite.DrawTexture(_spriteBatch, new Vector2(0, 0));
+
+        _spriteBatch.Draw(TextureManager.GetTexture("player_sprite"), Vector2.Zero, Color.Gold); 
         
         _spriteBatch.End();
         
