@@ -5,12 +5,15 @@ namespace Amber.Engine;
 
 public class Texture
 {
-    public Texture2D texture;
+    private Texture2D texture;
+    private Rectangle source_rectangle; 
 
-    void DrawTexture(SpriteBatch _spriteBatch, Vector2 position)
+    void DrawTexture(SpriteBatch spriteBatch, Vector2 position)
     {
-        _spriteBatch.Draw(
-            
+        spriteBatch.Draw(
+            position: position,
+            sourceRectangle: source_rectangle,
+            color: Color.White
             );
     }
 }
