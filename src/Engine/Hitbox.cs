@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 
-namespace Amber;
+namespace Amber.Engine;
 
 public class Hitbox
 {
