@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "0F4o5Wm77BpLB8Nkj5QJWxPqg/lTb5socU4z9U79D4Dpo31NkmEzzdQS7NDCxxlGRGkzFIBjgvEtbd2aMkAofg==",
+  "success": true,
+  "projectFilePath": "/home/humberto/Documents/Code/MonoGame/Amber/Amber.csproj",
+  "expectedPackageFiles": [
+    "/home/humberto/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "/home/humberto/.nuget/packages/monogame.framework.desktopgl/3.8.1.303/monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
+    "/home/humberto/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.24/microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512"
+  ],
+  "logs": []
+}
