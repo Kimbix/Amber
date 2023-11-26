@@ -13,6 +13,7 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     private Sprite _test;
+    //private 
 
     public Game1()
     {

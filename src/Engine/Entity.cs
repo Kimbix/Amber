@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -80,6 +81,18 @@ public class EntityManager
         Entities.Add(entityName, entity);
 
         return entity;
+    }
+    
+    public static Entity NewEntity()
+    {
+        string id = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+        return AddEntity(new Entity(), id);
+    }
+
+    public static Entity AddEntity(Entity entity)
+    {
+        string id = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+        return AddEntity(entity, id);
     }
     public static Entity GetEntity(string entityName) { return Entities[entityName]; }
 
