@@ -1,5 +1,5 @@
-using System.Diagnostics.Metrics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Amber.Engine;
 
 namespace Amber;
@@ -9,6 +9,7 @@ public class Player : Entity
     private bool Alive = true;
     private bool Jumping = false;
     private bool Dashing = false;
+    
     
     public void Move(Vector2 newPosition)
     {
@@ -48,5 +49,30 @@ public class Player : Entity
     {
         // Play sprite animation for death
         Alive = false;
+    }
+
+    private void Loop()
+    {
+        var kstate = Keyboard.GetState();
+
+        if (kstate.IsKeyDown(Keys.Up))
+        {
+            Position.Y -= Acceleration.Y;
+        }
+
+        if(kstate.IsKeyDown(Keys.Down))
+        {
+            Position.Y += Acceleration.Y;
+        }
+
+        if (kstate.IsKeyDown(Keys.Left))
+        {
+            Position.X -= Acceleration.X;
+        }
+
+        if(kstate.IsKeyDown(Keys.Right))
+        {
+            Position.X += Acceleration.X;
+        }
     }
 }
