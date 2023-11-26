@@ -1,16 +1,18 @@
-namespace Amber.Hitbox;
+using Microsoft.Xna.Framework;
+
+namespace Amber;
 
 public class Hitbox
 {
+    public Vector2 Position;
     public int Width, Height;
-    public int XPos, YPos;
     
     // Returns true if another hitbox is intersecting this one
-    bool IsTouching(Hitbox hitbox)
+    public bool IsTouching(Hitbox hitbox)
     {
-        return (hitbox.XPos >= this.XPos && hitbox.XPos <= this.Width) || 
-               (hitbox.Width >= this.XPos && hitbox.Width <= this.Width) ||
-               (hitbox.YPos >= this.YPos && hitbox.YPos <= this.Height) ||
-               (hitbox.Height >= this.YPos && hitbox.Height <= this.Height);
+        return (hitbox.Position.X >= this.Position.X && hitbox.Position.X <= this.Width) || 
+               (hitbox.Width >= this.Position.X && hitbox.Width <= this.Width) ||
+               (hitbox.Position.Y >= this.Position.Y && hitbox.Position.Y <= this.Height) ||
+               (hitbox.Height >= this.Position.Y && hitbox.Height <= this.Height);
     }
 }

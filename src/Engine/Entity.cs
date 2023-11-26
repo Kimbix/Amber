@@ -1,7 +1,9 @@
-namespace Amber.Entity;
+using Microsoft.Xna.Framework;
+
+namespace Amber;
 
 public class Entity
 {
-    public int XPos, YPos;
-    public Hitbox.Hitbox HitboxSquare;
+    public Vector2 Position;
+    public Hitbox Hitbox = null;
 }
