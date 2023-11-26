@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/humberto/Documents/Code/MonoGame/Amber/Content/Sprites/Player/player_sprite.png","/home/humberto/Documents/Code/MonoGame/Amber/Content/bin/DesktopGL/Content/Sprites/Player/player_sprite.xnb","TextureProcessor","Texture2DContent",871,65621,0.1644468
+"/home/humberto/Documents/Code/MonoGame/Amber/Content/Sprites/Player/player_sprite.png","/home/humberto/Documents/Code/MonoGame/Amber/Content/bin/DesktopGL/Content/Sprites/Player/player_sprite.xnb","TextureProcessor","Texture2DContent",871,65621,0.1572527
