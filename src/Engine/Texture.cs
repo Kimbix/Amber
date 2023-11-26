@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -31,31 +33,49 @@ public class Sprite
 {
     private static Texture2D _texture;
     private Rectangle _sourceRectangle;
-    private int _frames;
-    private int _animation;
-    private int _sizeX;
-    private int _sizeY;
+    
+    // First integer specifies the row
+    // Second integer specifies the number of columns
+    private int _currentAnimation;
+    private readonly Dictionary<int, int> _animations = new Dictionary<int, int>();
+    private readonly int _rows, _columns;
+    private readonly int _sizeX, _sizeY;
 
     public Sprite(Texture2D texture, int rows, int columns)
     {
         if (rows < 1) { throw new ArgumentException("Rows cannot be under 1", nameof(rows)); }
         if (columns < 1) { throw new ArgumentException("Columns cannot be under 1", nameof(columns)); }
         _texture = texture ?? throw new ArgumentException("Texture cannot be null", nameof(texture));
-        Debug.Print(rows.ToString());
-        Debug.Print(columns.ToString());
-        _sizeY = _texture.Height / rows;
-        _sizeX = _texture.Width / columns;
+        _rows = rows;
+        _columns = columns;
+        _sizeY = _texture.Height / _rows;
+        _sizeX = _texture.Width / _columns;
         _sourceRectangle.Height = _sizeY;
         _sourceRectangle.Width = _sizeX;
         _sourceRectangle.X = 0;
         _sourceRectangle.Y = 0;
     }
-    public void ChangeSourceRectangle(int frame = 0, int animation = 0)
+
+    public void RegisterAnimation(int row, int frames)
     {
-        _sourceRectangle.X = frame * _sizeX;
-        _sourceRectangle.Y = animation * _sizeY;
+        if (frames < 0 || frames > _columns) { throw new IndexOutOfRangeException("Frames number out of range"); }
+        if (row < 0 || row > _rows) { throw new IndexOutOfRangeException("Row number out of range"); }
+        _animations.Add(row, frames);
     }
 
+    public void SelectAnimation(int row)
+    {
+        if (row < 0 || row > _rows) { throw new IndexOutOfRangeException("Row number out of range"); }
+        _currentAnimation = row;
+        _sourceRectangle.X = 0;
+        _sourceRectangle.Y = _sizeY * row;
+    }
+
+    public void MoveFrame(int amount)
+    {
+        _sourceRectangle.X = (_sourceRectangle.X + _sizeX * amount) % (_sizeX * _animations[_currentAnimation]);
+    }
+    
     public void DrawTexture(SpriteBatch spriteBatch, Vector2 position)
     {
         spriteBatch.Draw(

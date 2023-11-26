@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Amber.Engine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -32,6 +33,10 @@ public class Game1 : Game
         TextureManager.LoadTexture(Content, "Sprites/Player/testing_sprite", "testing_sprite");
 
         _test = new Sprite(TextureManager.GetTexture("testing_sprite"), 4, 8);
+        _test.RegisterAnimation(0, 8);
+        _test.RegisterAnimation(1, 4);
+        _test.RegisterAnimation(2, 8);
+        _test.RegisterAnimation(3, 4);
     }
 
     protected override void Update(GameTime gameTime)
