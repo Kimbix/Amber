@@ -9,10 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="252ef110-ebc5-4f68-aea6-c27970e79556" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Amber.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Amber.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Amber.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Amber.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Content.mgcb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tula.aaaa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Blocks/TerrainBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/TerrainBlock.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +32,7 @@
   <component name="ProjectId" id="2Yiud0I47y1vcDhkiEELDtsUizd" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -99,7 +97,7 @@
       <updated>1701020806742</updated>
       <workItem from="1701020808076" duration="82000" />
       <workItem from="1701020899289" duration="768000" />
-      <workItem from="1701021972794" duration="2178000" />
+      <workItem from="1701021972794" duration="2420000" />
     </task>
     <servers />
   </component>
