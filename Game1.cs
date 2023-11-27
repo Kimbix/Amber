@@ -11,8 +11,7 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     private Sprite _test;
-    //private 
-
+    
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -36,6 +35,15 @@ public class Game1 : Game
         _test.RegisterAnimation(1, 4);
         _test.RegisterAnimation(2, 8);
         _test.RegisterAnimation(3, 4);
+
+        EntityManager.AddEntity(new Player(), "boi");
+        EntityManager.NewEntity("floor");
+
+        EntityManager.GetEntity("floor").Position = new Vector2(0.0f, 200.0f);
+        EntityManager.GetEntity("floor").isRigid = true;
+
+        EntityManager.GetEntity("boi").hitbox = new Hitbox();
+        EntityManager.GetEntity("floor").hitbox = new Hitbox();
     }
 
     protected override void Update(GameTime gameTime)
@@ -44,6 +52,7 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
+        EntityManager.UpdateAll();
 
         base.Update(gameTime);
     }
@@ -55,6 +64,7 @@ public class Game1 : Game
         _spriteBatch.Begin();
 
         _test.DrawTexture(_spriteBatch, Vector2.Zero);
+        EntityManager.DrawAll(_spriteBatch);
         
         _spriteBatch.End();
         

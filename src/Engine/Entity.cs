@@ -94,6 +94,7 @@ public class EntityManager
         string id = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
         return AddEntity(entity, id);
     }
+    
     public static Entity GetEntity(string entityName) { return Entities[entityName]; }
 
     public static void UpdateAll()
